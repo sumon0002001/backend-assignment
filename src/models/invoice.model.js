@@ -13,7 +13,7 @@ var Invoice = function(invoice){
 
 // get all employees
 Invoice.getAllInVoices = (result) =>{
-    dbConn.query('SELECT * FROM invoice WHERE is_deleted=0', (err, res)=>{
+    dbConn.query('SELECT * FROM invoice', (err, res)=>{
         if(err){
             console.log('Error while fetching invoices', err);
             result(null,err);
