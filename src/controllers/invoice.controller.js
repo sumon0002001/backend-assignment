@@ -1,4 +1,4 @@
-
+const InvoiceModel = require('../models/invoice.model');
 
 // get all invoice list
 exports.getInvoiceList = (req, res)=> {
