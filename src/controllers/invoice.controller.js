@@ -22,3 +22,24 @@ exports.getInvoiceByID = (req, res)=>{
         res.send(invoice);
     })
 }
+
+// create new invoice
+
+exports.createNewInvoice = (req, res) => {
+    console.log("req data", req.body);
+    const invoiceReqData = new InvoiceModel(req.body);
+    console.log('invoiceReqData', invoiceReqData);
+    if(req.body.constructor === Object && Object.keys(req.body).length === 0){
+        res.send(400).send({success: false, message: 'Please fill all fields'});
+    }else{
+        console.log("valid data");
+        InvoiceModel.createInvoice(invoiceReqData, (err, invoice)=>{
+            if(err)
+            res.send(err);
+            res.json({status: true, message: 'Invoice Created Successfully', data: invoice.insertId})
+        })
+       
+    }
+
+
+}

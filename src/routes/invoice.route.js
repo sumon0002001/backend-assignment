@@ -3,10 +3,13 @@ const router = express.Router();
 
 const invoiceController = require('../controllers/invoice.controller');
 
-// get all employees
+// get all invoices
 router.get('/', invoiceController.getInvoiceList);
 
-// get employee by ID
+// get invoice by ID
 router.get('/:id',invoiceController.getInvoiceByID);
+
+// create new invoice
+router.post('/', invoiceController.createNewInvoice)
 
 module.exports = router;
