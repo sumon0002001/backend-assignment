@@ -13,13 +13,25 @@ var Invoice = function(invoice){
 
 // get all employees
 Invoice.getAllInVoices = (result) =>{
-    dbConn.query('SELECT * FROM invoice', (err, res)=>{
+    dbConn.query('SELECT * FROM invoicess', (err, res)=>{
         if(err){
             console.log('Error while fetching invoices', err);
             result(null,err);
         }else{
             console.log('Invoices fetched successfully');
             result(null,res);
+        }
+    })
+}
+
+// get employee by ID from DB
+Invoice.getInvoiceByID = (id, result)=>{
+    dbConn.query('SELECT * FROM invoicess WHERE id=?', id, (err, res)=>{
+        if(err){
+            console.log('Error while fetching invoice by id', err);
+            result(null, err);
+        }else{
+            result(null, res);
         }
     })
 }

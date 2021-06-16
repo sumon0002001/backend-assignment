@@ -11,3 +11,14 @@ exports.getInvoiceList = (req, res)=> {
         res.send(employees)
     })
 }
+
+// get employee by ID
+exports.getInvoiceByID = (req, res)=>{
+    console.log('get inv by id');
+    InvoiceModel.getInvoiceByID(req.params.id, (err, invoice)=>{
+        if(err)
+        res.send(err);
+        console.log('single employee data',invoice);
+        res.send(invoice);
+    })
+}
