@@ -38,8 +38,21 @@ exports.createNewInvoice = (req, res) => {
             res.send(err);
             res.json({status: true, message: 'Invoice Created Successfully', data: invoice.insertId})
         })
-       
     }
+}
 
-
+exports.updateInvoice = (req, res) => {
+    const invoiceReqData = new InvoiceModel(req.body);
+    console.log('invoiceReqData update', invoiceReqData);
+    if(req.body.constructor === Object && Object.keys(req.body).length === 0){
+        res.send(400).send({success: false, message: 'Please fill all fields'});
+    }else{
+        console.log("valid data");
+        InvoiceModel.updateInvoice(req.params.id, invoiceReqData, (err, invoice)=>{
+            if(err)
+            res.send(err);
+            res.json({status: true, message: 'Invoice Updated Successfully', data: invoice.insertId})
+        })
+    }
+  
 }

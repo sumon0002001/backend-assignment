@@ -12,4 +12,7 @@ router.get('/:id',invoiceController.getInvoiceByID);
 // create new invoice
 router.post('/', invoiceController.createNewInvoice)
 
+//update invoice
+router.put('/:id', invoiceController.updateInvoice)
+
 module.exports = router;

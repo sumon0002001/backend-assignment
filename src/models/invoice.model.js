@@ -69,6 +69,20 @@ Invoice.createInvoice=(invoiceRequestData, result) => {
   })
 }
 
+//update Invoice
+
+Invoice.updateInvoice = (id, invoiceReqData, result) => {
+    dbConn.query("UPDATE employees SET account_country=?,account_name=?,amount_paid=?,amount_due=?,currency=?,customer=?,hours_of_work=?,rate_per_hour=?,work_related_expenses=?,material=?,status=?, WHERE id = ?", [invoiceReqData.account_country,invoiceReqData.account_name,invoiceReqData.amount_paid,invoiceReqData.amount_due,invoiceReqData.currency,invoiceReqData.customer,invoiceReqData.hours_of_work,invoiceReqData.rate_per_hour,invoiceReqData.work_relate_expenses,invoiceReqData.material,invoiceReqData.status, id], (err, res)=>{
+        if(err){
+            console.log('Error while updating the invoice');
+            result(null, err);
+        }else{
+            console.log("invoice updated successfully");
+            result(null, res);
+        }
+    });
+}
+
 
 
 module.exports = Invoice;
