@@ -1,0 +1,52 @@
+This endpoint creates a draft invoice for a given customer. 
+The draft invoice created pulls in all pending invoice items on that customer, including prorations. 
+The invoice remains a draft until you finalize the invoice, which allows you to pay or send the invoice to your customers.
+Returns an invoice object if a valid invoice ID was provided. Throws an error otherwise.
+Draft invoices are fully editable. Once an invoice is finalized, monetary values, as well as collection_method, become uneditable.
+
+# invoice-api
+
+This is the backend for making an invoice app.
+
+![screenshots](./img.png)
+
+## :hammer: Built with:
+
+-node js
+
+## :red_circle: Live Demo:
+
+[Live demo](https://react-my-book-store.herokuapp.com/)
+
+## :construction_worker: Getting Started
+
+To get a local copy up and running follow these simple steps:
+
+- Go to the main page.
+- Press the "Code" button and get the repo link.
+- Clone it using git command "git clone".
+- Open in terminal the folder just cloned.
+- run in terminal 'npm install'.
+- To see locally run 'npm run start'.
+
+👤 **Mir Rawshan Ali**
+
+- GitHub: [@sumon0002009](https://github.com/sumon0002001)
+- Twitter: [@sumon0002009](https://twitter.com/Sumon0002009)
+- LinkedIn: [Mir Rawshan Ali](https://www.linkedin.com/in/mir-rawshan-ali/)
+
+
+
+## :raised_hand: :raised_hand: Contributions
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues here]().
+
+## Show your support
+
+Give a :star: if you like this project!.
+
+## :grey_exclamation: Acknowlegment
+
+

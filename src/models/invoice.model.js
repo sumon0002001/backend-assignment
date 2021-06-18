@@ -15,19 +15,6 @@ var Invoice = function(invoice){
     this.created_at     =   new Date();
     this.updated_at     =   new Date();
 }
-// "account_country": "Ind",
-// "account_name": "Rawshan",
-// "amount_paid": "0.00",
-// "amount_due": "100.00",
-// "currency": "RS",
-// "customer": "Microsoft",
-// "hours_of_work": "1.00",
-// "rate_per_hour": "5.00",
-// "work_relate_expenses": "10.00",
-// "material": "PC",
-// "status": 0,
-// "created_at": "2021-02-18T05:15:45.000Z",
-// "updated_at": "2021-06-15T21:27:43.000Z"
 
 // get all employees
 Invoice.getAllInVoices = (result) =>{
